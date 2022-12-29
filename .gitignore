@@ -8,4 +8,5 @@ nbactions.xml
 nb-configuration.xml
 nbproject/
 
-todo.txt
+# runelite crash logs
+hs_err_pid*.log
