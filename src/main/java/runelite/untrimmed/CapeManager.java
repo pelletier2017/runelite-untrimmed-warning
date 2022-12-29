@@ -19,7 +19,7 @@ public class CapeManager {
     private Client client;
 
     private List<Integer> untrimmedCapeIds = new ArrayList<>(Arrays.asList(
-            ItemID.FARMING_CAPET,
+            ItemID.FARMING_CAPE,
             ItemID.AGILITY_CAPE,
             ItemID.ATTACK_CAPE,
             ItemID.CONSTRUCT_CAPE,
