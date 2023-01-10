@@ -7,10 +7,10 @@ import net.runelite.client.config.ConfigItem;
 
 import java.awt.*;
 
-@ConfigGroup("untrimmed.warning")
+@ConfigGroup(UntrimmedConfig.CONFIG_GROUP)
 public interface UntrimmedConfig extends Config {
 
-    String CONFIG_GROUP = "untrimmed.warning";
+    String CONFIG_GROUP = "untrimmed-warning";
 
     @ConfigItem(
             keyName = "remainingXp",
