@@ -22,8 +22,8 @@ public class CapeTracker implements Serializable {
     }
 
     public void persistData() {
-        log.info("shutting down");
-        log.info(String.valueOf(capesFound));
+        log.debug("shutting down");
+        log.debug("CapesFound=" + capesFound);
         for (CapeStorageLocation location : CapeStorageLocation.values()) {
             String key = "capetracker." + location.name();
             configManager.setConfiguration(UntrimmedConfig.CONFIG_GROUP, key, capesFound.getOrDefault(location, 0));
@@ -31,7 +31,7 @@ public class CapeTracker implements Serializable {
     }
 
     private void startUp() {
-        log.info("starting up");
+        log.debug("starting up");
         for (CapeStorageLocation location : CapeStorageLocation.values()) {
             String key = "capetracker." + location.name();
             Integer count = configManager.getConfiguration(UntrimmedConfig.CONFIG_GROUP, key, Integer.class);
@@ -41,7 +41,7 @@ public class CapeTracker implements Serializable {
                 capesFound.put(location, count);
             }
         }
-        log.info(String.valueOf(capesFound));
+        log.debug("CapesFound=" + capesFound);
     }
 
     public int put(CapeStorageLocation capeStorageLocation, int quantity) {

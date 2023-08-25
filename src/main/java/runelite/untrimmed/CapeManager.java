@@ -73,7 +73,7 @@ public class CapeManager {
         if (capeLocations.isEmpty()) {
             return CapeStorageLocation.UNKNOWN;
         }
-        log.info("CapeLocations=" + capeLocations);
+        log.debug("CapeLocations=" + capeLocations);
 
         List<CapeStorageLocation> safeLocations = capeLocations.stream()
                 .filter(CapeStorageLocation::isSafe)
@@ -100,7 +100,7 @@ public class CapeManager {
         ItemContainer itemContainer = itemContainerChanged.getItemContainer();
         int deathVarpId = 261;
         int deathbankVarpValue = client.getVarpValue(deathVarpId);
-        log.info(String.valueOf(deathbankVarpValue));
+        log.debug("deathBankVarpValue=" + deathbankVarpValue);
         CapeStorageLocation location = CapeStorageLocation.of(itemContainer.getId(), deathbankVarpValue);
         capeTracker.put(location, untrimmedCapeCount(itemContainer));
     }
